@@ -22,7 +22,7 @@ class MyButton extends StatelessWidget {
       height: size,    // Controls height
       child: Icon(
         icon,
-        size: size * 0.7, // Scale icon proportionally
+        size: size * 0.6, // Scale icon proportionally
       ),
     );
   }
