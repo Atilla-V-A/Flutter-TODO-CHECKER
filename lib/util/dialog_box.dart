@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp1/util/my_button.dart';
 class DialogBox extends StatelessWidget {
-  const DialogBox({super.key});
+  final controller;
+  VoidCallback onSave;
+  VoidCallback onCancel;
+
+
+   DialogBox({super.key, required this.controller,required
+   
+   this.onSave, required this.onCancel,
+   }
+   );
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +23,7 @@ class DialogBox extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextField(
+              controller: controller,
               decoration: InputDecoration(
                 
                 border: OutlineInputBorder(),
@@ -38,12 +48,12 @@ Row(
                    padding: const EdgeInsets.only(right: 30.0,top: 9),
                    child: MyButton(
                     
-                    icon:Icons.close, onPressed: (){}),
+                    icon:Icons.close, onPressed: onCancel),
                  ),
                   //add
                   Padding(
                     padding: const EdgeInsets.only(top: 9.0),
-                    child: MyButton( onPressed: (){}),
+                    child: MyButton( onPressed: onSave),
                   ),
                 ],) 
 
